@@ -29,7 +29,7 @@
                     <a class="nav-link" href="formulario_productos.php">Comprar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="historial_ventas.php">Registro de ventas</a>
+                    <a class="nav-link" href="formulario_historial.php">Registro de ventas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="ver_carrito.php">Carrito</a>
