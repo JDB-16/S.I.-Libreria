@@ -2,9 +2,9 @@
 session_start();
 
 if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
-    include("head.php");
-    include("navbar.php");
-    include("conexion.php");
+    include("../Datos/head.php");
+    include("../Datos/navbar.php");
+    include("../Datos/conexion.php");
 
     try {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_Cliente'])) {
@@ -96,7 +96,7 @@ if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
                 </div>
             </form>
         </div>
-        <?php include("footer.php"); ?>
+        <?php include("../Datos/footer.php"); ?>
     </body>
     </html>
 <?php
@@ -111,7 +111,7 @@ if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
         echo '</html>';
     }
 } else {
-    header("Location: formulario_productos.php");
+    header("Location: ../Presentador/formulario_productos.php");
     exit();
 }
 ?>

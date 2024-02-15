@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("../Datos/conexion.php");
 
 if (isset($_GET['id'])) {
     $id_paciente = $_GET['id'];
@@ -11,10 +11,10 @@ if (isset($_GET['id'])) {
         session_start();
     }
 
-    header("Location: formulario_editarP.php");
+    header("Location: ../Presentador/formulario_editarP.php");
     exit();
 } else {
-    header("Location: formulario_editarP.php");
+    header("Location: ../Presentador/formulario_editarP.php");
     exit();
 }
 ?>

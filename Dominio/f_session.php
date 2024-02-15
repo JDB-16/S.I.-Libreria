@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("head.php");
+include("../Datos/head.php");
 ?>
 
 <body>
@@ -17,10 +17,10 @@ include("head.php");
 
          <!--<form action="" method="post">
             <div class="text-center mt-3">
-                <a href="formulario_login.php" class="btn btn-celeste">Ir al Login</a>
+                <a href="../Presentador/formulario_login.php" class="btn btn-celeste">Ir al Login</a>
             </div>
         </form>-->
-        <form method="post" class="text-center mt-3" action="salir.php">
+        <form method="post" class="text-center mt-3" action="../Dominio/salir.php">
             <button class="btn btn-celeste" type="submit">Ir al login</button>
         </form>
     </div>

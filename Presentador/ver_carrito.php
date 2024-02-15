@@ -3,15 +3,15 @@ session_start();
 
 
 if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
-    include("head.php");
+    include("../Datos/head.php");
     if (!isset($_SESSION['medico'])) {
-        include("navbarC.php");
+        include("../Datos/navbarC.php");
     }
     
     if (!isset($_SESSION['cliente'])) {
-        include("navbar.php");
+        include("../Datos/navbar.php");
     }
-    include("conexion.php");
+    include("../Datos/conexion.php");
 
 
     $cantidad_unidades = array_count_values($_SESSION['carrito']);
@@ -50,7 +50,7 @@ if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
                             <td><?= $cantidad_unidades[$producto->id_Producto] ?></td>
                             <td>
 
-                                <form action="eliminar_del_carrito.php" method="post">
+                                <form action="../Dominio/eliminar_del_carrito.php" method="post">
                                     <input type="hidden" name="id_producto" value="<?= $producto->id_Producto ?>">
                                     <button type="submit" class="btn btn-danger">Eliminar del Carrito</button>
                                 </form>
@@ -61,18 +61,18 @@ if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
             </table>
 
 
-            <form action="completar_venta.php" method="post" class="mt-3 text-center">
+            <form action="../Dominio/completar_venta.php" method="post" class="mt-3 text-center">
                 <button type="submit" class="btn btn-success">Completar Venta</button>
             </form>
         </div>
 
-        <?php include("footer.php"); ?>
+        <?php include("../Datos/footer.php"); ?>
     </body>
     </html>
 <?php
 } else {
 
-    header("Location: formulario_productos.php");
+    header("Location: ../Presentador/formulario_productos.php");
     exit();
 }
 ?>

@@ -1,14 +1,14 @@
 <?php
 session_start();
-include("head.php");
+include("../Datos/head.php");
 if (!isset($_SESSION['medico'])) {
-    include("navbarC.php");
+    include("../Datos/navbarC.php");
 }
 
 if (!isset($_SESSION['cliente'])) {
-    include("navbar.php");
+    include("../Datos/navbar.php");
 }
-include("conexion.php");
+include("../Datos/conexion.php");
 
 $consulta_productos = $conexion->query("SELECT id_Producto, Nombre, Precio, Stock FROM producto");
 $productos = $consulta_productos->fetchAll(PDO::FETCH_OBJ);
@@ -37,7 +37,7 @@ $productos = $consulta_productos->fetchAll(PDO::FETCH_OBJ);
                         <td><?= $producto->Stock ?></td>
                         <td>
                             <?php if ($producto->Stock > 0): ?>
-                                <form action="añadir_al_carrito.php" method="post">
+                                <form action="../Dominio/añadir_al_carrito.php" method="post">
                                     <input type="hidden" name="id_producto" value="<?= $producto->id_Producto ?>">
                                     <button type="submit" class="btn btn-success">Agregar al Carrito</button>
                                 </form>
@@ -51,6 +51,6 @@ $productos = $consulta_productos->fetchAll(PDO::FETCH_OBJ);
         </table>
     </div>
 
-    <?php include("footer.php"); ?>
+    <?php include("../Datos/footer.php"); ?>
 </body>
 </html>

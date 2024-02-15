@@ -1,5 +1,5 @@
 <?php
     session_start();
     session_destroy();
-    header('Location: formulario_login.php')
+    header('Location: ../Presentador/formulario_login.php')
 ?>

@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['carrito'][] = $id_producto;
 
-    header("Location: formulario_productos.php");
+    header("Location: ../Presentador/formulario_productos.php");
     exit();
 } else {
-    header("Location: formulario_productos.php");
+    header("Location: ../Presentador/formulario_productos.php");
     exit();
 }

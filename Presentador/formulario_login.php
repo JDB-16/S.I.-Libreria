@@ -1,5 +1,5 @@
 <?php
-include("head.php");
+include("../Datos/head.php");
 
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -8,13 +8,13 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 if (isset($_SESSION['cliente'])) {
-    header('Location: formulario_productos.php');
+    header('Location: ../Presentador/formulario_productos.php');
     exit();
 }
 
 
 if (isset($_SESSION['medico'])) {
-    header('Location: formulario_crear.php');
+    header('Location: ../Presentador/formulario_crear.php');
     exit();
 }
 
@@ -32,7 +32,7 @@ if (!isset($_COOKIE['intentos'])) {
                 <div class="card p-4">
                     <h1 class="mb-5 text-center bg-celeste text-white p-2 rounded">Login</h1>
 
-                    <form action="login.php" method="post">
+                    <form action="../Dominio/login.php" method="post">
                         <div class="mb-4">
                             <label for="username" class="form-label">Username:</label>
                             <input type="text" class="form-control" id="username" name="username" required>
@@ -59,7 +59,7 @@ if (!isset($_COOKIE['intentos'])) {
 
                     <div class="text-center">
                         <p class="mb-0">¿Aún no tienes cuenta?</p>
-                        <a href="formulario_crear_pa.php" class="btn btn-link">Regístrate como Paciente</a>
+                        <a href="../Presentador/formulario_crear_pa.php" class="btn btn-link">Regístrate como Paciente</a>
                     </div>
 
                     <div class="mt-4">

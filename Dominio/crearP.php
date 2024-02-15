@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexion.php");
+include("../Datos/conexion.php");
 
 $id_producto = $_POST["id_producto"];
 $nombre = $_POST["nombre"];
@@ -38,6 +38,6 @@ try {
     $_SESSION['mensaje_tipo'] = "danger";
 }
 
-header("Location: formulario_crearP.php");
+header("Location: ../Presentador/formulario_crearP.php");
 exit();
 ?>

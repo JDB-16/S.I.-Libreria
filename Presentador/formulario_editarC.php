@@ -1,12 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION['medico'])) {
-    header('Location: f_session.php');
+    header('Location: ../Dominio/f_session.php');
     exit();
 }
-include("head.php");
-include("navbar.php");
-include("conexion.php");
+include("../Datos/head.php");
+include("../Datos/navbar.php");
+include("../Datos/conexion.php");
 
 
 $consulta = $conexion->query("SELECT id_Cliente, DNI, Nombres, Apellidos FROM cliente ORDER BY id_Cliente ASC");
@@ -31,7 +31,7 @@ $clientes = $consulta->fetchAll(PDO::FETCH_OBJ);
         <?php
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            include("conexion.php");
+            include("../Datos/conexion.php");
 
             $consulta_parametro = $_POST["consulta"];
 
@@ -91,14 +91,14 @@ $clientes = $consulta->fetchAll(PDO::FETCH_OBJ);
                         <td><?= $cliente->Nombres ?></td>
                         <td><?= $cliente->Apellidos ?></td>
                         <td>
-                            <a href="editarC.php?id=<?= $cliente->id_Cliente ?>" class="btn btn-primary">Editar</a>
-                            <a href="eliminarC.php?id=<?= $cliente->id_Cliente ?>" class="btn btn-danger">Eliminar</a>
+                            <a href="../Dominio/editarC.php?id=<?= $cliente->id_Cliente ?>" class="btn btn-primary">Editar</a>
+                            <a href="../Dominio/eliminarC.php?id=<?= $cliente->id_Cliente ?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-    <?php include("footer.php"); ?>
+    <?php include("../Datos/footer.php"); ?>
 </body>
 </html>

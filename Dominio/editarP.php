@@ -1,7 +1,7 @@
 <?php
-include("head.php");
-include("navbar.php");
-include("conexion.php");
+include("../Datos/head.php");
+include("../Datos/navbar.php");
+include("../Datos/conexion.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_producto = $_POST["id_producto"];
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':id_producto' => $id_producto
     ]);
 
-        header("Location: formulario_editarP.php");
+        header("Location: ../Presentador/formulario_editarP.php");
     exit();
 } elseif (isset($_GET['id'])) {
     $id_producto = $_GET['id'];
@@ -52,20 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $consulta->execute([':id_producto' => $id_producto]);
     $producto = $consulta->fetch(PDO::FETCH_OBJ);
 } else {
-    header("Location: formulario_editarP.php");
+    header("Location: ../Presentador/formulario_editarP.php");
     exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-<?php include("head.php"); ?>
+<?php include("../Datos/head.php"); ?>
 
 <body class="bg-light">
     <div class="container mt-5">
         <h2 class="text-center mb-4">Actualizar Datos de Producto</h2>
 
-        <form action="editarP.php" method="post">
+        <form action="../Dominio/editarP.php" method="post">
             <input type="hidden" name="id_producto" value="<?= $producto->id_Producto ?>">
 
             <div class="form-group">
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="text-center mt-3 mb-4">
                 <button type="submit" class="btn btn-celeste btn-lg mr-2">Actualizar</button>
-                <a href="formulario_editarP.php" class="btn btn-celeste btn-lg mr-2">Regresar</a>
+                <a href="../Presentador/formulario_editarP.php" class="btn btn-celeste btn-lg mr-2">Regresar</a>
             </div>
             
         </form>

@@ -1,12 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION['medico'])) {
-    header('Location: f_session.php');
+    header('Location: ../Dominio/f_session.php');
     exit();
 }
-include("head.php");
-include("navbar.php");
-include("conexion.php");
+include("../Datos/head.php");
+include("../Datos/navbar.php");
+include("../Datos/conexion.php");
 
 // Obtener la lista de pacientes ordenada por id_Paciente de menor a mayor
 $consulta = $conexion->query("SELECT id_Producto, Nombre, Descripcion, Precio FROM producto ORDER BY id_Producto ASC");
@@ -31,7 +31,7 @@ $productos = $consulta->fetchAll(PDO::FETCH_OBJ);
         <?php
         // Verificar si se ha enviado el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            include("conexion.php");
+            include("../Datos/conexion.php");
 
             $consulta_parametro = $_POST["consulta"];
 
@@ -104,6 +104,6 @@ $productos = $consulta->fetchAll(PDO::FETCH_OBJ);
             </tbody>
         </table>
     </div>
-    <?php include("footer.php"); ?>
+    <?php include("../Datos/footer.php"); ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexion.php");
+include("../Datos/conexion.php");
 
 $id_cliente = $_POST["id_cliente"];
 $dni = $_POST["dni"];
@@ -32,6 +32,6 @@ try {
     $_SESSION['mensaje_tipo'] = "danger";
 }
 
-header("Location: formulario_crear.php");
+header("Location: ../Presentador/formulario_crear.php");
 exit();
 ?>

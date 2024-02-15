@@ -1,8 +1,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light color_fondo bg-celeste">
     <div class="container-fluid">
-        <a class="navbar-brand mr-auto" href="formulario_login.php">
-            <img src="imagenes/Logo.png" alt="Logo" style="width: 200px; height: auto;">
+        <a class="navbar-brand mr-auto" href="../Presentador/formulario_login.php">
+            <img src="../imagenes/Logo.png" alt="Logo" style="width: 200px; height: auto;">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                 </li>
             </ul>
         </div>
-        <form method="post" class="ml-auto" action="salir.php">
+        <form method="post" class="ml-auto" action="..Dominio/salir.php">
             <button class="nav-link text-dark" type="submit">salir</button>
         </form>
     </div>

@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['medico'])) {
-    header('Location: f_session.php');
+    header('Location: ../Dominio/f_session.php');
     exit();
 }
-include("head.php");
-include("navbar.php");
+include("../Datos/head.php");
+include("../Datos/navbar.php");
 ?>
 
 
@@ -21,7 +21,7 @@ include("navbar.php");
             <?php unset($_SESSION['mensaje']); ?>
         <?php endif; ?>
 
-        <form action="crear.php" method="post">
+        <form action="../Dominio/crear.php" method="post">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -68,6 +68,6 @@ include("navbar.php");
             </div>
         </form>
     </div>
-    <?php include("footer.php"); ?>
+    <?php include("../Datos/footer.php"); ?>
 </body>
 </html>

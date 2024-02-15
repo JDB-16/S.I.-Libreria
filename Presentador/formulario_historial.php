@@ -1,8 +1,8 @@
 <?php
 
-include("head.php");
-include("navbar.php");
-include("conexion.php");
+include("../Datos/head.php");
+include("../Datos/navbar.php");
+include("../Datos/conexion.php");
 // Consulta SQL para obtener el historial de ventas
 $consulta_ventas = $conexion->query("SELECT * FROM venta ORDER BY Fecha DESC");
 $ventas = $consulta_ventas->fetchAll(PDO::FETCH_OBJ);
