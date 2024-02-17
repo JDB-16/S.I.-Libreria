@@ -1,7 +1,7 @@
 .bg-celeste,
 .btn-celeste,
 .navbar-celeste {
-    background-color: #C8102E; /* Cambiado a rojo (#C8102E) */
+    background-color: #ff9800; /* Cambiado a rojo (#C8102E) */
     color: white;
     padding: 10px;
     border-radius: 10px;
@@ -17,13 +17,13 @@
 
 .navbar-celeste .navbar-nav .nav-item .nav-link.active,
 .navbar-celeste .navbar-nav .nav-item .nav-link:hover {
-    border: 2px solid #C8102E;
+    border: 2px solid #ff9800;
     border-radius: 5px;
     padding: 8px;
     color: white; /* Asegura que el color del texto sea blanco en estado activo o al pasar el mouse */
 }
 .btn-celeste:hover {
-    background-color: #961f41; /* Puedes ajustar el color del hover según tu preferencia */
+    background-color: #ff9800; /* Puedes ajustar el color del hover según tu preferencia */
 }
 
 .navbar-celeste .nav-link,

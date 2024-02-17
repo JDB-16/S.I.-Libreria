@@ -27,7 +27,8 @@ $ventas = $consulta_ventas->fetchAll(PDO::FETCH_OBJ);
                     <th>ID Cliente</th>
                     <th>Metodo de Pago</th>
                     <th>Preferencia de envio</th>
-                    <th>Subtotal</th>
+                    <th>Modalidad de compra</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,10 @@ $ventas = $consulta_ventas->fetchAll(PDO::FETCH_OBJ);
                         $consulta_prefEnvio = $conexion->prepare("SELECT Descripcion FROM prefenvio WHERE id_prefEnvio = ?");
                         $consulta_prefEnvio->execute([$venta->id_prefEnvio]);
                         $pref_envio = $consulta_prefEnvio->fetchColumn();
+
+                        $consulta_modCompra = $conexion->prepare("SELECT Descripcion FROM modcompra WHERE id_modCompra = ?");
+                        $consulta_modCompra->execute([$venta->id_modCompra]);
+                        $mod_compra = $consulta_modCompra->fetchColumn();
                     ?>
                     <tr>
                         <td><?= $venta->id_Venta ?></td>
@@ -47,6 +52,7 @@ $ventas = $consulta_ventas->fetchAll(PDO::FETCH_OBJ);
                         <td><?= $venta->id_Cliente ?></td>
                         <td><?= $metodo_pago ?></td>
                         <td><?= $pref_envio ?></td>
+                        <td><?= $mod_compra ?></td>
                         <td>$<?= number_format($venta->Subtotal, 2) ?></td>
                     </tr>
                 <?php endforeach; ?>

@@ -10,7 +10,7 @@ include("../Datos/navbar.php");
 
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Registro de Producto</h2>
+        <h2 class="text-center mb-4">Registro de Libros</h2>
 
         <?php if (isset($_SESSION['mensaje'])): ?>
             <div class="alert <?php echo strpos($_SESSION['mensaje'], 'Error') === false ? 'alert-success' : 'alert-danger'; ?>" role="alert">
