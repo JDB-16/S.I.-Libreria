@@ -2,14 +2,10 @@
 include("../Datos/conexion.php");
 
 if (isset($_GET['id'])) {
-    $id_paciente = $_GET['id'];
+    $id_producto = $_GET['id'];
 
-    $consulta = $conexion->prepare("DELETE FROM producto WHERE id_Producto = :id_producto");
+    $consulta = $conexion->prepare("DELETE FROM libro WHERE id_Producto = :id_producto");
     $consulta->execute([':id_producto' => $id_producto]);
-
-    if ($consulta->rowCount() > 0) {
-        session_start();
-    }
 
     header("Location: ../Presentador/formulario_editarP.php");
     exit();

@@ -132,37 +132,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="form-group">
-    <label for="nuevo_id_metPago">Método de Pago:</label>
-    <select name="nuevo_id_metPago" class="form-control" required>
-        <?php foreach ($metodos_pago as $metodo): ?>
-            <option value="<?php echo $metodo['id_metPago']; ?>" <?php echo ($cliente->id_metPago == $metodo['id_metPago']) ? 'selected' : ''; ?>>
-                <?php echo $metodo['Descripcion']; ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-</div>
+                <label for="nuevo_id_metPago">Método de Pago:</label>
+                <select name="nuevo_id_metPago" class="form-control" required>
+                    <?php foreach ($metodos_pago as $metodo): ?>
+                        <option value="<?php echo $metodo['id_metPago']; ?>" <?php echo ($cliente->id_metPago == $metodo['id_metPago']) ? 'selected' : ''; ?>>
+                            <?php echo $metodo['Descripcion']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
-<div class="form-group">
-    <label for="nuevo_id_prefEnvio">Preferencia de Envío:</label>
-    <select name="nuevo_id_prefEnvio" class="form-control" required>
-        <?php foreach ($pref_envio as $pref): ?>
-            <option value="<?php echo $pref['id_prefEnvio']; ?>" <?php echo ($cliente->id_prefEnvio == $pref['id_prefEnvio']) ? 'selected' : ''; ?>>
-                <?php echo $pref['Descripcion']; ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-</div>
+            <div class="form-group">
+                <label for="nuevo_id_prefEnvio">Preferencia de Envío:</label>
+                <select name="nuevo_id_prefEnvio" class="form-control" required>
+                    <?php foreach ($pref_envio as $pref): ?>
+                        <option value="<?php echo $pref['id_prefEnvio']; ?>" <?php echo ($cliente->id_prefEnvio == $pref['id_prefEnvio']) ? 'selected' : ''; ?>>
+                            <?php echo $pref['Descripcion']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
-<div class="form-group">
-    <label for="nuevo_id_modCompra">Modalidad de Compra:</label>
-    <select name="nuevo_id_modCompra" class="form-control" required>
-        <?php foreach ($mod_compra as $mod): ?>
-            <option value="<?php echo $mod['id_modCompra']; ?>" <?php echo ($cliente->id_modCompra == $mod['id_modCompra']) ? 'selected' : ''; ?>>
-                <?php echo $mod['Descripcion']; ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-</div>
+            <div class="form-group">
+                <label for="nuevo_id_modCompra">Modalidad de Compra:</label>
+                <select name="nuevo_id_modCompra" class="form-control" required>
+                    <?php foreach ($mod_compra as $mod): ?>
+                        <option value="<?php echo $mod['id_modCompra']; ?>" <?php echo ($cliente->id_modCompra == $mod['id_modCompra']) ? 'selected' : ''; ?>>
+                            <?php echo $mod['Descripcion']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
 
             <div class="text-center mt-3 mb-4">
