@@ -14,6 +14,9 @@
                     <a class="nav-link" href="formulario_login.php">Login</a>
                 </li>-->
                 <li class="nav-item">
+                    <a class="nav-link" href="../Presentador/formulario_editarCuenta.php">Editar Perfil</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../Presentador/formulario_productos.php">Comprar</a>
                 </li>
                 <li class="nav-item">

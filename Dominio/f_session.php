@@ -5,7 +5,7 @@ include("../Datos/head.php");
 
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">No estas logeado como médico</h2>
+        <h2 class="text-center mb-4">No estas logeado como administrador</h2>
         
         <!--   Prueba   -->
         <?php if (isset($_SESSION['mensaje'])): ?>

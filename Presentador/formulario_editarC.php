@@ -1,11 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['medico'])) {
-    header('Location: ../Dominio/f_session.php');
-    exit();
-}
 include("../Datos/head.php");
-include("../Datos/navbar.php");
+if (!isset($_SESSION['medico'])) {
+    include("../Datos/navbarC.php");
+}
+
+if (!isset($_SESSION['cliente'])) {
+    include("../Datos/navbar.php");
+}
 include("../Datos/conexion.php");
 
 
