@@ -20,10 +20,10 @@
                     <a class="nav-link" href="formulario_crear.php">Registrar Cliente</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="formulario_editarP.php">Productos</a>
+                    <a class="nav-link" href="formulario_editarP.php">Libros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="formulario_crearP.php">Registrar Producto</a>
+                    <a class="nav-link" href="formulario_crearP.php">Registrar Libro</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="formulario_productos.php">Comprar</a>
@@ -36,7 +36,7 @@
                 </li>
             </ul>
         </div>
-        <form method="post" class="ml-auto" action="..Dominio/salir.php">
+        <form method="post" class="ml-auto" action="../Dominio/salir.php">
             <button class="nav-link text-dark" type="submit">salir</button>
         </form>
     </div>

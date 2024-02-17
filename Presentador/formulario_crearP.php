@@ -8,7 +8,6 @@ include("../Datos/head.php");
 include("../Datos/navbar.php");
 ?>
 
-
 <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Registro de Producto</h2>
@@ -34,40 +33,25 @@ include("../Datos/navbar.php");
                     </div>
 
                     <div class="form-group">
-                        <label for="descripcion">Descripción:</label>
-                        <input type="text" name="descripcion" class="form-control" placeholder="" required>
+                        <label for="sinopsis">Sinopsis:</label>
+                        <input type="text" name="sinopsis" class="form-control" placeholder="" required>
                     </div>
 
+                    <div class="form-group">
+                        <label for="autor">Autor:</label>
+                        <input type="text" name="autor" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="precio">Precio:</label>
                         <input type="text" name="precio" class="form-control" placeholder="" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="id_tipo">ID Tipo:</label>
-                        <input type="text" name="id_tipo" class="form-control" placeholder="T01" required>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="almacenamiento">Almacenamiento:</label>
-                        <input type="text" name="almacenamiento" class="form-control" placeholder="" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="lectura">Lectura:</label>
-                        <input type="text" name="lectura" class="form-control" placeholder="" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="escritura">Escritura:</label>
-                        <input type="text" name="escritura" class="form-control" placeholder="" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="vida_operativa">Vida Operativa:</label>
-                        <input type="text" name="vida_operativa" class="form-control" placeholder="" required>
+                        <label for="fecha_publicacion">Fecha de Publicación:</label>
+                        <input type="date" name="fecha_publicacion" class="form-control" placeholder="" required>
                     </div>
 
                     <div class="form-group">

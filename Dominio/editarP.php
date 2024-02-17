@@ -10,23 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nuevo_nombre = $_POST["nuevo_nombre"];
     $nuevo_descripcion = $_POST["nuevo_descripcion"];
     $nuevo_precio = $_POST["nuevo_precio"];
-    $nueva_tipo = $_POST["nueva_tipo"];
-    $nuevo_almacenamiento = $_POST["nuevo_almacenamiento"];
-    $nuevo_lectura = $_POST["nuevo_lectura"];
-    $nuevo_escritura = $_POST["nuevo_escritura"];
-    $nuevo_vida = $_POST["nuevo_vida"];
+    $nueva_fecha_publicacion = $_POST["nueva_fecha_publicacion"];
     $nuevo_stock = $_POST["nuevo_stock"];
 
-    $consulta = $conexion->prepare("UPDATE producto 
+    $consulta = $conexion->prepare("UPDATE libro 
                                     SET id_Producto = :nuevo_id,
                                         Nombre = :nuevo_nombre, 
-                                        Descripcion = :nuevo_descripcion, 
+                                        Sinopsis = :nuevo_descripcion, 
                                         Precio = :nuevo_precio, 
-                                        id_Tipo = :nueva_tipo, 
-                                        Almacenamiento = :nuevo_almacenamiento, 
-                                        Lectura = :nuevo_lectura, 
-                                        Escritura = :nuevo_escritura, 
-                                        Vida_Operativa = :nuevo_vida,
+                                        FechaPublicacion = :nueva_fecha_publicacion,
                                         Stock = :nuevo_stock
                                     WHERE id_Producto = :id_producto");
 
@@ -35,20 +27,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':nuevo_nombre' => $nuevo_nombre,
         ':nuevo_descripcion' => $nuevo_descripcion,
         ':nuevo_precio' => $nuevo_precio,
-        ':nueva_tipo' => $nueva_tipo,
-        ':nuevo_almacenamiento' => $nuevo_almacenamiento,
-        ':nuevo_lectura' => $nuevo_lectura,
-        ':nuevo_escritura' => $nuevo_escritura,
-        ':nuevo_vida' => $nuevo_vida,
+        ':nueva_fecha_publicacion' => $nueva_fecha_publicacion,
         ':nuevo_stock' => $nuevo_stock,
         ':id_producto' => $id_producto
     ]);
 
-        header("Location: ../Presentador/formulario_editarP.php");
+    header("Location: ../Presentador/formulario_editarP.php");
     exit();
 } elseif (isset($_GET['id'])) {
     $id_producto = $_GET['id'];
-    $consulta = $conexion->prepare("SELECT * FROM producto WHERE id_Producto = :id_producto");
+    $consulta = $conexion->prepare("SELECT * FROM libro WHERE id_Producto = :id_producto");
     $consulta->execute([':id_producto' => $id_producto]);
     $producto = $consulta->fetch(PDO::FETCH_OBJ);
 } else {
@@ -80,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="form-group">
                 <label for="nuevo_descripcion">Descripción:</label>
-                <input type="text" name="nuevo_descripcion" class="form-control" value="<?= $producto->Descripcion ?>" required>
+                <input type="text" name="nuevo_descripcion" class="form-control" value="<?= $producto->Sinopsis ?>" required>
             </div>
 
             <div class="form-group">
@@ -89,28 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="form-group">
-                <label for="nueva_tipo">ID Tipo:</label>
-                <input type="text" name="nueva_tipo" class="form-control" value="<?= $producto->id_Tipo ?>" required>
-            </div>
-
-            <div class="form-group">
-                <label for="nuevo_almacenamiento">Almacenamiento:</label>
-                <input type="text" name="nuevo_almacenamiento" class="form-control" value="<?= $producto->Almacenamiento ?>" required>
-            </div>
-
-            <div class="form-group">
-                <label for="nuevo_lectura">Lectura:</label>
-                <input type="text" name="nuevo_lectura" class="form-control" value="<?= $producto->Lectura ?>" required>
-            </div>
-
-            <div class="form-group">
-                <label for="nuevo_escritura">Escritura:</label>
-                <input type="text" name="nuevo_escritura" class="form-control" value="<?= $producto->Escritura ?>" required>
-            </div>
-
-            <div class="form-group">
-                <label for="nuevo_vida">Vida Operativa:</label>
-                <input type="text" name="nuevo_vida" class="form-control" value="<?= $producto->Vida_Operativa ?>" required>
+                <label for="nueva_fecha_publicacion">Fecha de Publicación:</label>
+                <input type="date" name="nueva_fecha_publicacion" class="form-control" value="<?= $producto->FechaPublicacion ?>" required>
             </div>
 
             <div class="form-group">

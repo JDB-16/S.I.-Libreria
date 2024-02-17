@@ -9,7 +9,12 @@ include("../Datos/navbar.php");
 include("../Datos/conexion.php");
 
 
-$consulta = $conexion->query("SELECT id_Cliente, DNI, Nombres, Apellidos FROM cliente ORDER BY id_Cliente ASC");
+$consulta = $conexion->query("SELECT c.id_Cliente, c.DNI, c.Nombres, c.Apellidos, mp.Descripcion AS MetodoPago, pe.Descripcion AS PrefEnvio, mc.Descripcion AS modCompra
+                                FROM cliente c 
+                                LEFT JOIN metodopago mp ON c.id_metPago = mp.id_metPago 
+                                LEFT JOIN prefenvio pe ON c.id_prefEnvio = pe.id_prefEnvio
+                                LEFT JOIN modcompra mc ON c.id_modCompra =mc.id_modCompra 
+                                ORDER BY c.id_Cliente ASC");
 $clientes = $consulta->fetchAll(PDO::FETCH_OBJ);
 ?>
 
@@ -59,6 +64,8 @@ $clientes = $consulta->fetchAll(PDO::FETCH_OBJ);
                 echo "<p class='card-text'>Apellidos: " . $cliente->Apellidos . "</p>";
                 echo "<p class='card-text'>Direccion: " . $cliente->Direccion . "</p>";
                 echo "<p class='card-text'>id_Sexo : " . $cliente->id_Sexo  . "</p>";
+                echo "<p class='card-text'>id_metPago : " . $cliente->id_metPago  . "</p>";
+                echo "<p class='card-text'>id_prefEnvio : " . $cliente->id_prefEnvio  . "</p>";
                 echo "</div>";
                 echo "</div>";
                 }
@@ -80,6 +87,9 @@ $clientes = $consulta->fetchAll(PDO::FETCH_OBJ);
                     <th>DNI</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
+                    <th>Método de Pago</th>
+                    <th>Preferencia de Envío</th>
+                    <th>Modalidad de compra</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -90,6 +100,9 @@ $clientes = $consulta->fetchAll(PDO::FETCH_OBJ);
                         <td><?= $cliente->DNI ?></td>
                         <td><?= $cliente->Nombres ?></td>
                         <td><?= $cliente->Apellidos ?></td>
+                        <td><?= $cliente->MetodoPago ?></td>
+                        <td><?= $cliente->PrefEnvio ?></td>
+                        <td><?= $cliente->modCompra ?></td>
                         <td>
                             <a href="../Dominio/editarC.php?id=<?= $cliente->id_Cliente ?>" class="btn btn-primary">Editar</a>
                             <a href="../Dominio/eliminarC.php?id=<?= $cliente->id_Cliente ?>" class="btn btn-danger">Eliminar</a>

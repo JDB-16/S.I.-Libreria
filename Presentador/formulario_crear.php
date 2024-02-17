@@ -43,22 +43,47 @@ include("../Datos/navbar.php");
                         <label for="nombres">Nombres:</label>
                         <input type="text" name="nombres" class="form-control" placeholder="" required>
                     </div>
-                </div>
 
-                <div class="col-md-6">
                     <div class="form-group">
                         <label for="apellidos">Apellidos:</label>
                         <input type="text" name="apellidos" class="form-control" placeholder="" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="direccion">Direccion:</label>
+                        <label for="localidad">Localidad:</label>
+                        <input type="text" name="localidad" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="pais">País:</label>
+                        <input type="text" name="pais" class="form-control" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
                         <input type="text" name="direccion" class="form-control" placeholder="" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="id_sexo">Id_Sexo:</label>
+                        <label for="id_sexo">ID Sexo:</label>
                         <input type="text" name="id_sexo" class="form-control" placeholder="S01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_metPago">ID Método de Pago:</label>
+                        <input type="text" name="id_metPago" class="form-control" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_prefEnvio">ID Preferencia de Envío:</label>
+                        <input type="text" name="id_prefEnvio" class="form-control" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_modCompra">ID Modalidad de Compra:</label>
+                        <input type="text" name="id_modCompra" class="form-control" placeholder="" required>
                     </div>
                 </div>
             </div>

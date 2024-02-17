@@ -10,7 +10,7 @@ if (!isset($_SESSION['cliente'])) {
 }
 include("../Datos/conexion.php");
 
-$consulta_productos = $conexion->query("SELECT id_Producto, Nombre, Precio, Stock FROM producto");
+$consulta_productos = $conexion->query("SELECT id_Producto, Nombre, Autor, Precio, Stock FROM libro");
 $productos = $consulta_productos->fetchAll(PDO::FETCH_OBJ);
 ?>
 
@@ -23,6 +23,7 @@ $productos = $consulta_productos->fetchAll(PDO::FETCH_OBJ);
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Autor</th>
                     <th>Precio $</th>
                     <th>Stock</th>
                     <th>Acciones</th>
@@ -33,6 +34,7 @@ $productos = $consulta_productos->fetchAll(PDO::FETCH_OBJ);
                     <tr>
                         <td><?= $producto->id_Producto ?></td>
                         <td><?= $producto->Nombre ?></td>
+                        <td><?= $producto->Autor ?></td>
                         <td><?= $producto->Precio ?></td>
                         <td><?= $producto->Stock ?></td>
                         <td>

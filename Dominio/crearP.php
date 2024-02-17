@@ -4,28 +4,22 @@ include("../Datos/conexion.php");
 
 $id_producto = $_POST["id_producto"];
 $nombre = $_POST["nombre"];
-$descripcion = $_POST["descripcion"];
+$sinopsis = $_POST["sinopsis"];
+$autor = $_POST["autor"];
 $precio = $_POST["precio"];
-$id_tipo = $_POST["id_tipo"];
-$almacenamiento = $_POST["almacenamiento"];
-$lectura = $_POST["lectura"];
-$escritura = $_POST["escritura"];
-$vida_operativa = $_POST["vida_operativa"];
+$fecha_publicacion = $_POST["fecha_publicacion"];
 $stock = $_POST["stock"];
 
 try {
-    $consulta = $conexion->prepare("INSERT INTO producto (id_Producto , Nombre, Descripcion, Precio, id_Tipo , Almacenamiento, Lectura, Escritura, Vida_Operativa, Stock)
-    VALUES (:id_producto, :nombre, :descripcion, :precio, :id_tipo, :almacenamiento, :lectura, :escritura, :vida_operativa, :stock);");
+    $consulta = $conexion->prepare("INSERT INTO libro (id_Producto, Nombre, Sinopsis, Autor, Precio, FechaPublicacion, Stock)
+    VALUES (:id_producto, :nombre, :sinopsis, :autor, :precio, :fecha_publicacion, :stock)");
 
     $consulta->bindParam(':id_producto', $id_producto);
     $consulta->bindParam(':nombre', $nombre);
-    $consulta->bindParam(':descripcion', $descripcion);
+    $consulta->bindParam(':sinopsis', $sinopsis);
+    $consulta->bindParam(':autor', $autor);
     $consulta->bindParam(':precio', $precio);
-    $consulta->bindParam(':id_tipo', $id_tipo);
-    $consulta->bindParam(':almacenamiento', $almacenamiento);
-    $consulta->bindParam(':lectura', $lectura);
-    $consulta->bindParam(':escritura', $escritura);
-    $consulta->bindParam(':vida_operativa', $vida_operativa);
+    $consulta->bindParam(':fecha_publicacion', $fecha_publicacion);
     $consulta->bindParam(':stock', $stock);
 
     $consulta->execute();

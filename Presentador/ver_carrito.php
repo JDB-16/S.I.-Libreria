@@ -18,7 +18,7 @@ if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0) {
 
 
     $placeholders = implode(',', array_fill(0, count($_SESSION['carrito']), '?'));
-    $consulta = $conexion->prepare("SELECT id_Producto, Nombre, Precio, Stock FROM producto WHERE id_Producto IN ($placeholders)");
+    $consulta = $conexion->prepare("SELECT id_Producto, Nombre, Precio, Stock FROM libro WHERE id_Producto IN ($placeholders)");
 
 
     $consulta->execute(array_values($_SESSION['carrito']));

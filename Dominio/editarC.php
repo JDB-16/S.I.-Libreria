@@ -11,8 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nueva_contrasena = $_POST["nueva_contrasena"];
     $nuevo_nombre = $_POST["nuevo_nombre"];
     $nuevo_apellidos = $_POST["nuevo_apellidos"];
+    $nuevo_localidad = $_POST["nuevo_localidad"];
+    $nuevo_pais = $_POST["nuevo_pais"];
     $nuevo_direccion = $_POST["nuevo_direccion"];
     $nuevo_id_sexo = $_POST["nuevo_id_sexo"];
+    $nuevo_id_metPago = $_POST["nuevo_id_metPago"];
+    $nuevo_id_prefEnvio = $_POST["nuevo_id_prefEnvio"];
 
     $consulta = $conexion->prepare("UPDATE cliente 
                                     SET id_Cliente = :nuevo_id,
@@ -20,8 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         Contraseña = :nueva_contrasena, 
                                         Nombres = :nuevo_nombre, 
                                         Apellidos = :nuevo_apellidos,
+                                        Localidad = :nuevo_localidad, 
+                                        Pais = :nuevo_pais,
                                         Direccion = :nuevo_direccion, 
-                                        id_Sexo = :nuevo_id_sexo
+                                        id_Sexo = :nuevo_id_sexo,
+                                        id_metPago = :nuevo_id_metPago,
+                                        id_prefEnvio = :nuevo_id_prefEnvio
                                     WHERE id_Cliente = :id_cliente");
 
     $consulta->execute([
@@ -30,8 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':nueva_contrasena' => $nueva_contrasena,
         ':nuevo_nombre' => $nuevo_nombre,
         ':nuevo_apellidos' => $nuevo_apellidos,
+        ':nuevo_localidad' => $nuevo_localidad,
+        ':nuevo_pais' => $nuevo_pais,
         ':nuevo_direccion' => $nuevo_direccion,        
         ':nuevo_id_sexo' => $nuevo_id_sexo,
+        ':nuevo_id_metPago' => $nuevo_id_metPago,
+        ':nuevo_id_prefEnvio' => $nuevo_id_prefEnvio,
         ':id_cliente' => $id_cliente
     ]);
 
@@ -85,6 +97,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="form-group">
+                <label for="nuevo_localidad">Localidad:</label>
+                <input type="text" name="nuevo_localidad" class="form-control" value="<?= $cliente->Localidad ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nuevo_pais">Pais:</label>
+                <input type="text" name="nuevo_pais" class="form-control" value="<?= $cliente->Pais ?>" required>
+            </div>
+
+            <div class="form-group">
                 <label for="nuevo_direccion">Direccion:</label>
                 <input type="text" name="nuevo_direccion" class="form-control" value="<?= $cliente->Direccion ?>" required>
             </div>
@@ -92,6 +114,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <label for="nuevo_id_sexo">ID Sexo:</label>
                 <input type="text" name="nuevo_id_sexo" class="form-control" value="<?= $cliente->id_Sexo ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nuevo_id_metPago">ID Metodo Pago:</label>
+                <input type="text" name="nuevo_id_metPago" class="form-control" value="<?= $cliente->id_metPago ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nuevo_id_prefEnvio">ID Preferencia Envio:</label>
+                <input type="text" name="nuevo_id_prefEnvio" class="form-control" value="<?= $cliente->id_prefEnvio ?>" required>
             </div>
 
             <div class="text-center mt-3 mb-4">
